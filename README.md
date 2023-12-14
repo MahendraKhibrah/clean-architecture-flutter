@@ -12,4 +12,8 @@ open your terminal and clone the project with your custom name :
 `git clone clean_architecture_template your_custom_name`
 
 then, replace all clean_architecure_template words in repo with your custom name :
-`find $input_x -type f -exec sed -i "s/flutter_template/$input_x/g" {} \;`
+`git grep -lz 'clean_architecture_template' | xargs -0 sed -i '' "s/clean_architecture_template/$your_custom_name/g"`
+
+**HOW TO BUILD**
+after all, you can run command below to build the project :
+`make all-dev`
