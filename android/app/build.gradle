@@ -63,12 +63,12 @@ android {
     productFlavors {
         dev {
             dimension "default"
-            resValue "string", "app_name", "your app name-dev"
+            resValue "string", "app_name", "cleanArchitectureTemplate-dev"
             applicationIdSuffix ".dev"
         }
         prod {
             dimension "default"
-            resValue "string", "app_name", "your app name"
+            resValue "string", "app_name", "cleanArchitectureTemplate"
             applicationIdSuffix ""
         }
     }
