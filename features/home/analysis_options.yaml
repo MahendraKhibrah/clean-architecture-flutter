@@ -13,6 +13,11 @@ linter:
     - curly_braces_in_flow_control_structures
     # doc comments
     - slash_for_doc_comments
-    - always_require_non_null_named_parameters
-    - prefer_mixin
-    - prefer_void_to_null
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+  errors:
+    # false positive when using Freezed
+    invalid_annotation_target: ignore
