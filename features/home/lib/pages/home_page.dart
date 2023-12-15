@@ -21,7 +21,10 @@ class HomePage extends StatelessWidget {
           return state.maybeMap(
             orElse: () => const SizedBox(),
             success: (val) => Column(
-              children: [Text('${val.example.id}'), Text(val.example.name)],
+              children: [
+                Text('${val.example.id}'),
+                Text('${val.example.type}')
+              ],
             ),
             loading: (value) => const Center(
               child: CircularProgressIndicator(),

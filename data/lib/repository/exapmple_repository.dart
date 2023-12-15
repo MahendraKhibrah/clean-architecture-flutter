@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'package:data/api/example_api.dart';
 import 'package:data/extention/response_ext.dart';
@@ -14,9 +13,8 @@ class ExampleRepositoryImpl extends ExampleRepository {
 
   @override
   FutureOr<ResourceState<Example>> getExample() async {
-    return await _exampleApi.getJokes().mapToEntity((val) => Example(
-          id: json.decode(val)['body']?[0]?['id'] ?? 0,
-          name: json.decode(val)['body']?[0]?['name'] ?? '',
-        ));
+    return await _exampleApi.getJokes().mapToEntity((val) {
+      return Example.fromJson(val);
+    });
   }
 }
